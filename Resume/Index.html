@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <title>Mitchell G. Migala - Resume</title>
     <link rel="stylesheet" href="css/style.css">
-
     <script src="scripts/script.js"></script>
-
-
 </head>
-<body>
 
+<body onload="pageInit()">
 
 <noscript>
     Your browser either doesn't have Javascript installed or it is 
@@ -21,21 +18,31 @@
 
 <header>
     <!--Possibly add on click to also email here as well?-->
-    <p id="yo" >Mitchell</p> <p> Migala</p>
+    <p>Mitchell</p> <p> Migala</p>
     <address>14343 Brookmere Blvd NW, Prior Lake MN 55372 -
              (612)-986-9586
     </address>
     <a href="mailto:mitchellmigala@gmail.com">MitchellMigala@gmail.com</a>
 </header>
+
 <br>
 
 <main>
+    <nav aria-label="site navigation" class="topnav">
 
-    <script>writingHtml(html);</script>
+        <a id="a1" onclick="changeVisible('sec1')" href="#">Highlights</a>
+        <a id="a2" onclick="changeVisible('sec2')" href="#">Accomplishments</a>
+        <a id="a3" onclick="changeVisible('sec3')" href="#">Work History</a>
+        <a id="a4" onclick="changeVisible('sec4')" href="#">Education</a>
 
+    </nav>
 
-    <section aria-label="highlights section">
+    <div id="sec1" aria-label="Only used for display tricks">
+
+    <section aria-label="highlights section" >
+
         <h1>Highlights:</h1>
+
         <!--Table for laying out resume highlights-->
         <table class="highlights">
             <ul>
@@ -49,10 +56,10 @@
             </tr>
             <tr>
                 <td><li>
-                    Good communication skills 
+                    Excellent communication skills 
                 </li></td>
                 <td><li>
-                    Strong integrity
+                    Desire for continual growth
                 </li></td>
             </tr>
             <tr>
@@ -60,33 +67,46 @@
                     Highly responsible
                 </li></td>
                 <td><li>
-                    Positive attitude
+                    Strong integrity and ethics
                 </li></td>
             </tr>
         </ul>
+
         </table>
+
     </section>
 
-    <section aria-label="accomplishments section" class="accomplish">
+    </div>
+
+    <div id="sec2" aria-label="Only used for display tricks">
+
+    <section aria-label="accomplishments section">
 
         <h1>Accomplishments:</h1>
+
         <p>Moved from team member to Assistant General Manager to General
             Manager in just over one year.  Turned a failing store back to
-            profitable, in under twelve months.  Beat every budget that 
-            was set and sent by corporate.
+            profitable, in under twelve months, utilizing improvement management
+            methods of quality control, staff training, and leadership.  Exceeded
+            every budget established by upper management.
         </p>
 
     </section>
 
-    <section aria-label="work history">
-        <!--Table containing work history *see below for additional description-->
+    </div>
 
+    <div id="sec3" aria-label="Only used for display tricks">
+
+    <section aria-label="work history">
+
+        <!--Table containing work history *see below for additional description-->
         <!--First row has two columns one for place one for dates worked-->
         <!--Second has only one describing responsibilties-->
         <table class="work">
+
             <caption> Relevant Work History:</caption>
             <tr>
-                <td onmouseover="slideTds('descSlideA')" onmouseout="erase('descSlideA')">
+                <td>
                     Growth Marketing -Front-end Development and Web Maintenance - Eagan, MN
                 </td>
                 <td>
@@ -94,12 +114,15 @@
                 </td>
             </tr>
             <tr>
-                <td id="descSlideA" class="slider">
-                    Helping to maintain websites. Check links, identify problems, solve,
-                     and fix issues.  Currently working on re-designing and re-writing source code from scratch.</td>
+                <td class="slider">
+                    Helping with affiliate websites.  Checking website functionality
+                    and product links.  Editing text for grammar and spelling errors.  
+                    Analyzing source code, and reviewing existing websites, and modifying
+                    the websites to bring them into valid HTML 5 and CSS 3 compliance.
+                    </td>
             </tr>
             <tr>
-                <td onmouseover="slideTds('descSlideB')" onmouseout="erase('descSlideB')">
+                <td>
                     Brueggers Bagels - General Manager - Edina, MN
                 </td>
                 <td>
@@ -107,17 +130,17 @@
                 </td>
             </tr>
             <tr>
-                <td id="descSlideB" class="slider"> 
+                <td class="slider"> 
                     Conducted all store operations.  Opened the store for daily business,
                     ran daily shifts with team members and bakers, closed the store and 
                     completed after hours business(safe audits, bank deposits, cashier settlments).
-                    Interviewed, hired and trained new employees. Performed weekly inventory.  Managed cost
+                    Interviewed, hired and trained new employees. Managed cost
                      of goods and labor. Reviewed budgets with corporate management. Analyzed profit 
                      and loss statements to monitor progress and search for areas of improvement.
                 </td>
             </tr>
             <tr>
-                <td onmouseover="slideTds('descSlideC')" onmouseout="erase('descSlideC')">
+                <td>
                     PESI LLC - CIO - Eau Claire, WI
                 </td>
                 <td>
@@ -125,22 +148,28 @@
                 </td>
             </tr>
             <tr>
-                <td id="descSlideC" class="slider">
+                <td class="slider">
                     Worked directly with marketing, writing custom software that allowed
-                    them to more narrowly target their ads increasing return on marketing spending.
-                    Implemented regular back-ups of databases using a hard-drive array. Was working
-                    on using regular expressions to eliminate cross-scripting in web forms to elminate code 
-                    injection, when I left the company. I also helped with regular IT support help.
+                    them to more narrowly target their ads increasing return for marketing campaigns.
+                    Implemented regular back-ups of databases using a hard-drive array. Maintained web pages.
+                    Initiated the use of regular expressions to eliminate cross-scripting in web
+                    forms.  Assisted with regular IT support help for all staff.
                 </td>
             </tr>
         </table>
+
     </section>
 
+    </div>
+
+    <div id="sec4" aria-label="Only used for display tricks">
+
     <section aria-label="education section">
+
         <h1>Education:</h1>
-        <h1>Coursera certificates</h1>
-        
-        <p>Completed the following courses and specializations on Coursera:</p>
+
+        <h2>Coursera certificates</h2>
+
         <ul>
             <li>Linux Command Line Basics</li>
             <li>HTML 5</li>
@@ -148,17 +177,20 @@
             <li>Version control with GIT</li>
             <li>Javascript</li>
             <li>Responsive Design</li>
-            <li>Web Development Capstone - University of Michigan</li>
         </ul>
 
-        <h1>Chippewa Valley Technical College - Eau Claire, WI</h1>
+        <h2>Chippewa Valley Technical College - Eau Claire, WI</h2>
+
         <p>2008 - Associate of Computer Science: Information Technology Programmer
             /Analyst. With a certification in object oriented programming.
         </p>
 
-
     </section>
+
+    </div>
+
 </main>
 
 </body>
+
 </html>

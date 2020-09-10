@@ -1,39 +1,66 @@
-//alert("Well well well, Mitcell the file is in fact linked!! Good job!");
-
-//alert("The first paragraph contains " + document.getElementById("yo").innerHTML);
-
-//document.getElementById("yo").innerHTML = "yo! gabba gabba" ;
-
-//alert("Uh oh! Now it contains " + document.getElementById("yo").innerHTML);
-//document.write("<p>It goes something like this. </p>");
 
 
-//const name = prompt("Please enter your name fool!");
+function changeVisible(eleId)
+{
+    //remove link clicked from invisible class
+    document.getElementById(eleId).classList.remove("invis") ;
 
-//const html = "";
+    //set nav to active
+    if (eleId == "sec1") {
+        document.getElementById('a1').className = "active";
+        //reset the rest to in-active
+        document.getElementById('a2').classList.remove('active');
+        document.getElementById('a3').classList.remove('active');
+        document.getElementById('a4').classList.remove('active');
 
+        //make sure the rest are invisible
+        document.getElementById('sec2').className = "invis";
+        document.getElementById('sec3').className = "invis";
+        document.getElementById('sec4').className = "invis";
+      }
 
-//function writingHtml(html){
+      if (eleId == "sec2") {
+        document.getElementById('a2').className = "active";
+        //reset the rest to in-active
+        document.getElementById('a1').classList.remove('active');
+        document.getElementById('a3').classList.remove('active');
+        document.getElementById('a4').classList.remove('active');
+        //make sure the rest are invisible
+        document.getElementById('sec1').className = "invis";
+        document.getElementById('sec3').className = "invis";
+        document.getElementById('sec4').className = "invis";
+      }
 
-//    do {
-//html = prompt("please enter what you would like to add to the page: when you are done type exit");
-//document.write(html);
-//console.log("html contains " + html);
-//   }
-//    while(html !== "exit") ;
-//}
+      if (eleId == "sec3") {
+        document.getElementById('a3').className = "active";
+        //reset the rest to in-active
+        document.getElementById('a1').classList.remove('active');
+        document.getElementById('a2').classList.remove('active');
+        document.getElementById('a4').classList.remove('active');
+        //make sure the rest are invisible
+        document.getElementById('sec1').className = "invis";
+        document.getElementById('sec2').className = "invis";
+        document.getElementById('sec4').className = "invis";
+      }
+      if (eleId == "sec4") {
+        document.getElementById('a4').className = "active";
+        //reset the rest to in-active
+        document.getElementById('a1').classList.remove('active');
+        document.getElementById('a2').classList.remove('active');
+        document.getElementById('a3').classList.remove('active');
+        //make sure the rest are invisible   
+        document.getElementById('sec1').className = "invis";
+        document.getElementById('sec2').className = "invis";
+        document.getElementById('sec3').className = "invis";
+      }
 
+      return
+}
 
-
-//function slideTds(tdSlider)
-//{
-
-//    document.getElementById(tdSlider).className = ".slider:hover";
-//}
-
-//function erase(ele)
-//{
-//    document.getElementById(ele).style.display = "none";
-
-//}
-
+//this runs on load to make sure no section is visible
+function pageInit(){
+    document.getElementById('sec1').className = "invis";
+    document.getElementById('sec2').className = "invis";
+    document.getElementById('sec3').className = "invis";
+    document.getElementById('sec4').className = "invis";
+}
