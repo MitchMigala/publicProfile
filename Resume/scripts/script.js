@@ -10,22 +10,30 @@
 
 //const name = prompt("Please enter your name fool!");
 
-const html = "";
+//const html = "";
 
 
-function writingHtml(html){
+//function writingHtml(html){
 
-    do {
-html = prompt("please enter what you would like to add to the page: when you are done type exit");
-document.write(html);
-console.log("html contains " + html);
-    }
-    while(html !== "exit") ;
-}
+//    do {
+//html = prompt("please enter what you would like to add to the page: when you are done type exit");
+//document.write(html);
+//console.log("html contains " + html);
+//   }
+//    while(html !== "exit") ;
+//}
 
 
 
-console.log("Well thats it.  Your Javascript has all ran out!");
-console.log("By the way dudes name was " + name);
+//function slideTds(tdSlider)
+//{
 
-console.log("By the way html contains " + name);
+//    document.getElementById(tdSlider).className = ".slider:hover";
+//}
+
+//function erase(ele)
+//{
+//    document.getElementById(ele).style.display = "none";
+
+//}
+
