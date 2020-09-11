@@ -1,66 +1,44 @@
 
+function changeVisible(eleId){
+    var allIds = ["a1", "a2", "a3", "a4"] ;
+    var count = 0;
 
-function changeVisible(eleId)
-{
-    //remove link clicked from invisible class
-    document.getElementById(eleId).classList.remove("invis") ;
+    //remove all active states once per click
+    document.getElementById('a1').classList.remove('active');
+    document.getElementById('a2').classList.remove('active');
+    document.getElementById('a3').classList.remove('active');
+    document.getElementById('a4').classList.remove('active');
 
-    //set nav to active
-    if (eleId == "sec1") {
-        document.getElementById('a1').className = "active";
-        //reset the rest to in-active
-        document.getElementById('a2').classList.remove('active');
-        document.getElementById('a3').classList.remove('active');
-        document.getElementById('a4').classList.remove('active');
+    //remove all elements from visibility once per click
+    document.getElementById('sec0').className = "invis";
+    document.getElementById('sec1').className = "invis";
+    document.getElementById('sec2').className = "invis";
+    document.getElementById('sec3').className = "invis";
 
-        //make sure the rest are invisible
-        document.getElementById('sec2').className = "invis";
-        document.getElementById('sec3').className = "invis";
-        document.getElementById('sec4').className = "invis";
-      }
+    //run through the list of possible clicks to find which one
+    allIds.forEach(setEm);
 
-      if (eleId == "sec2") {
-        document.getElementById('a2').className = "active";
-        //reset the rest to in-active
-        document.getElementById('a1').classList.remove('active');
-        document.getElementById('a3').classList.remove('active');
-        document.getElementById('a4').classList.remove('active');
-        //make sure the rest are invisible
-        document.getElementById('sec1').className = "invis";
-        document.getElementById('sec3').className = "invis";
-        document.getElementById('sec4').className = "invis";
-      }
+function setEm(item, index){
 
-      if (eleId == "sec3") {
-        document.getElementById('a3').className = "active";
-        //reset the rest to in-active
-        document.getElementById('a1').classList.remove('active');
-        document.getElementById('a2').classList.remove('active');
-        document.getElementById('a4').classList.remove('active');
-        //make sure the rest are invisible
-        document.getElementById('sec1').className = "invis";
-        document.getElementById('sec2').className = "invis";
-        document.getElementById('sec4').className = "invis";
-      }
-      if (eleId == "sec4") {
-        document.getElementById('a4').className = "active";
-        //reset the rest to in-active
-        document.getElementById('a1').classList.remove('active');
-        document.getElementById('a2').classList.remove('active');
-        document.getElementById('a3').classList.remove('active');
-        //make sure the rest are invisible   
-        document.getElementById('sec1').className = "invis";
-        document.getElementById('sec2').className = "invis";
-        document.getElementById('sec3').className = "invis";
-      }
+   // debugging code: console.log("item is " + item + "count is " + count + "eleId is " + eleId.id + "sec would be " + "sec" + count);
 
-      return
+    //once you get to the one that was clicked make active and visible
+    if(item == eleId.id){
+        document.getElementById(eleId.id).className = "active";
+
+        //remove link clicked from invisible class
+        document.getElementById("sec" + count).classList.remove("invis") ;
+        return
+    }
+    count = count + 1;
+}
+return
 }
 
 //this runs on load to make sure no section is visible
 function pageInit(){
+    document.getElementById('sec0').className = "invis";
     document.getElementById('sec1').className = "invis";
     document.getElementById('sec2').className = "invis";
     document.getElementById('sec3').className = "invis";
-    document.getElementById('sec4').className = "invis";
 }
